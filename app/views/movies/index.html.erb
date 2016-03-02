@@ -1,5 +1,10 @@
 <h1>Rotten Mangoes</h1>
 <%= link_to "Submit a Movie!", new_movie_path %>
+<% unless current_user == nil %>
+  <% if current_user.admin? %>
+    <%= link_to "Admin View", admin_users_path %>
+  <% end %>
+<% end %>
 <hr>
 <% @movies.each do |movie| %>
   <h2><%= link_to movie.title, movie_path(movie) %></h2>

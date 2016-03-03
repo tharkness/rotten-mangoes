@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="line-height: 0">
+  <a class="navbar-brand" href="/movies">Rotten Mangoes</a>
+  <ul class="text-right nav navbar-nav" style="float: right">
+    <li class="nav-item active"><%= link_to "Submit a Movie!", new_movie_path %> | <%  %></li><li class="nav-item active"><%= link_to "Admin View", admin_users_path unless current_user == nil || !current_user.admin? %></li>
+  </ul>
+
+    <div class="form-inline pull-xs-left" style="padding-top: 15px">
+    <%= form_tag(movies_search_path, method: :get, html: {class: "form-inline"}) do %>
+      <div class="field form-group">
+        <li><%= text_field_tag :movie %></li>
+      </div>
+      <div class="form-group" style="line-height:1">
+        <li><%= submit_tag("Search", html: {class: "btn btn-default navbar-btn"}) %></li>
+      </div>
+    <% end %>
+
+</nav>

@@ -1,9 +1,7 @@
-<footer>
-  <small>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
     <% if current_user %>
-      Signed in as <%= current_user.full_name %> (<%= link_to "Logout", session_path("current"), method: :delete %>)
+      <h4><strong style="color: darkgray;">Signed in as <%= current_user.full_name %> (<%= link_to "Logout", session_path("current"), method: :delete %>)</strong></h4>
     <% else %>
       <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
     <% end %>
-  </small>
-</footer>
+</nav>

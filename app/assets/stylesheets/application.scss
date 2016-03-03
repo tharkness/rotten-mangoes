@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ body{
+  background-image: url("hollywood-sign-buildings.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  padding-bottom: 40px;
+  padding-top: 65px;
+ }
+
+ .myBackground {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: inherit; 
+  padding-top: 5px;
+  color: inherit;
+  border-radius: 10px;
+ }
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #090909;
+  line-height: 0;
+}

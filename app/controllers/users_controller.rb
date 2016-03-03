@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @pages_users = User.order("email").page(params[:page])
+    @pages_users = User.order("email").page(params[:page]).per(1)
   end
 
   protected

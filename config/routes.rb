@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'rake/routes'
+
   get 'reviews/new'
 
   get 'reviews/create'
 
+  get 'movies/search', to: 'movies#search'
   resources :movies do
     resources :reviews, only: [:new, :create]
   end
+
+
   resources :users, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 

@@ -1,16 +1,13 @@
-<h1>Rotten Mangoes</h1>
-<%= link_to "Submit a Movie!", new_movie_path %>
-<% unless current_user == nil %>
-  <% if current_user.admin? %>
-    <%= link_to "Admin View", admin_users_path %>
-  <% end %>
-<% end %>
-<hr>
-<% @movies.each do |movie| %>
-  <h2><%= link_to movie.title, movie_path(movie) %></h2>
-  <h3><%= formatted_date(movie.release_date) %></h3>
-  <h3>Average Rating of: <%= movie.review_average %>/10</h3>
-  <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
-  <p><%= movie.description %></p>
-  <hr>
-<% end %>
+
+<div class="container">
+  <div class="myBackground">
+    <% @movies.each do |movie| %>
+      <h2><%= link_to movie.title, movie_path(movie) %></h2>
+      <h3><%= formatted_date(movie.release_date) %></h3>
+      <h3>Average Rating of: <%= movie.review_average %>/10</h3>
+      <h4>Dir. <%= movie.director %> | <%= movie.runtime_in_minutes %> minutes</h4>
+      <p><%= movie.description %></p>
+      <hr>
+    <% end %>
+  </div>
+</div>

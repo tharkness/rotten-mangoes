@@ -39,6 +39,10 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
+  def search
+    @movies = Movie.search(params[:movie]).all
+  end
+
   protected
 
   def movie_params

@@ -23,4 +23,14 @@ class Movie < ActiveRecord::Base
     reviews.size == 0 ? @errors = "unavailable" : reviews.sum(:rating_out_of_ten)/reviews.size
   end
 
+  def self.search(search)
+    if search
+      # where(:all, :conditions => ['title LIKE ?', "%#{search}%"])
+      # find(:all, :conditions => ['director LIKE ?', "%#{search}%"])
+      where("title like ? or director like ?", "%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
 end

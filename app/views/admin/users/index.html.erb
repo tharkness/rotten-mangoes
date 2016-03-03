@@ -1,14 +1,16 @@
-<h1>God's Eye View</h1>
-<%= link_to "Back to Home", movies_path %>
-<hr/>
-<%= link_to "Create new User", new_user_path %>
-<hr/>
-<% @users.each do |user| %>
-  <h3><%= user.full_name %></h3>
-  <h3><%= user.email %></h3>
-  <h3><%= user.created_at %></h3>
-  <h3><%= link_to "Destroy", user_path(user.id), :method => :delete %></h3>
+<div class="container myBackground" style="padding: 10px;" >
+  <h1>God's Eye View</h1>
+  <%= link_to "Back to Home", movies_path %>
   <hr/>
-<% end %>
-<%= paginate @pages_users %>
-<hr/>
+  <%= link_to "Create new User", new_user_path %>
+  <hr/>
+  <% @pages_users.each do |user| %>
+    <h3><%= user.full_name %></h3>
+    <h3><%= user.email %></h3>
+    <h3><%= user.created_at %></h3>
+    <h3><%= link_to "Destroy", user_path(user.id), :method => :delete %></h3>
+    <hr/>
+  <% end %>
+  <%= paginate @pages_users %>
+  <hr/>
+</div>

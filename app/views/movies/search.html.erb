@@ -1,0 +1,10 @@
+<h1 style="padding-left: 15px"><%= "'#{params[:movie]}' returned these results" %></h1>
+<hr/>
+<div class="col-lrg-10 myBackground" style="padding-left: 15px">
+<% @movies.each do |movie| %>
+  <h2><%= link_to movie.title, movie_path(movie) %></h2><br/>
+  <h3><%= movie.director %></h3><br/>
+  <h4>average rating: <%= movie.review_average %></h4>
+  <hr/>
+<% end %>
+</div>
